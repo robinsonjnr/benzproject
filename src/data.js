@@ -2,6 +2,7 @@ const carsData = {
     "cars": [
         {
             "id": 1,
+            "img": "img/benz1.jpg",
             "name": "Mercedes-Benz S-Class",
             "description": "The Mercedes-Benz S-Class is the epitome of luxury and sophistication. Known for its opulent interior, cutting-edge technology, and exceptional performance, it offers an unmatched driving experience.",
             "year": 2023,
@@ -13,6 +14,7 @@ const carsData = {
         },
         {
             "id": 2,
+            "img": "img/benz2.jpg",
             "name": "Mercedes-Benz E-Class",
             "description": "The Mercedes-Benz E-Class combines comfort and elegance with advanced safety features. This midsize luxury sedan offers a smooth ride, spacious interior, and innovative technology, making it a top choice for executives and families.",
             "year": 2023,
@@ -24,6 +26,7 @@ const carsData = {
         },
         {
             "id": 3,
+            "img": "img/benz3.jpg",
             "name": "Mercedes-Benz GLC",
             "description": "The Mercedes-Benz GLC is a luxurious SUV that seamlessly combines style and performance. With its powerful engine options, high-quality interior, and advanced infotainment system, it delivers a premium driving experience.",
             "year": 2023,
@@ -35,6 +38,7 @@ const carsData = {
         },
         {
             "id": 4,
+            "img": "img/benz4.jpg",
             "name": "Mercedes-Benz C-Class",
             "description": "The Mercedes-Benz C-Class is a compact luxury sedan that offers a perfect balance of sportiness and sophistication. Its sleek design, agile handling, and state-of-the-art features make it a popular choice among driving enthusiasts.",
             "year": 2023,
@@ -46,6 +50,7 @@ const carsData = {
         },
         {
             "id": 5,
+            "img": "img/benz5.jpg",
             "name": "Mercedes-Benz GLE",
             "description": "The Mercedes-Benz GLE is a versatile SUV that combines power, comfort, and innovation. With its spacious cabin, robust engine options, and advanced safety technologies, it provides an exceptional driving experience for both city and off-road adventures.",
             "year": 2023,
@@ -57,6 +62,7 @@ const carsData = {
         },
         {
             "id": 6,
+            "img": "img/benz1.jpg",
             "name": "Mercedes-Benz A-Class",
             "description": "The Mercedes-Benz A-Class is a stylish and compact luxury hatchback known for its modern design and impressive performance. Equipped with advanced technology and safety features, it offers a dynamic and comfortable ride.",
             "year": 2023,
