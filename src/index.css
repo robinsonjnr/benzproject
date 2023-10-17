@@ -13,8 +13,8 @@ body {
 header {
   background-color: #000;
   color: #fff;
-  padding: 10px 0;
-  text-align: center;
+  padding: 10px 20px;
+  text-align: right;
 }
 
 h1 {
@@ -24,7 +24,7 @@ h1 {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0px;
 }
 
 /* Style links */
@@ -41,8 +41,8 @@ a:hover {
 /* Style the main content sections */
 section {
   background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 0px;
+  margin-bottom: 0px;
   border: 1px solid #ccc;
 }
 
@@ -54,6 +54,8 @@ h2 {
 p {
   font-size: 16px;
   line-height: 1.5;
+  margin-bottom: 10px;
+
 }
 
 /* STYLE FOR THE PRODUCT DISPLAY PAGE*/
