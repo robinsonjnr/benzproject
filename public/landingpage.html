@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes-Benz Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: right;
+}
+
+.background {
+    height: 300vh; /* Adjust the height of the background section as needed */
+    background: url("img/Abloh.jpg") center/cover no-repeat;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    width: 1160px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    margin: auto;
+}
+
+.box {
+    position: relative;
+    width: 275px;
+    height: 275px;
+    background: #000;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    margin-top: 45px;
+    margin-right: 15px;
+}
+.container:hover .box {
+    transform: rotateY('25deg');
+}
+.container .box:hover ~ .box {
+    transform: rotateY(-25deg);
+  }
+  .container .box:hover {
+    transform: rotateY(0deg) scale(1.25);
+    z-index: 1;
+    box-shadow: 0 25px 40px rgba(0,0,0,0.5);
+  }
+  .container .box .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .container .box .imgBx:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,#f00,#000);
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+    mix-blend-mode: multiply;
+  }
+  .container .box:hover .imgBx:before {
+    opacity: 1;
+  }
+
+/* Rest of your styles for .box, .imgBx, .content, etc. go here */
+
+section {
+    flex: 1;
+    background-color: #f9f9f9; /* Change the background color of the additional section */
+    padding: 20px;
+    text-align: center;
+}
+.container .box .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .container .box .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    padding: 20px;
+    align-items: flex-end;
+    box-sizing: border-box;
+  }
+  .container .box .content h2 {
+    color: #fff;
+    transition: 0.5s;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 20px;
+    transform: translateY(200px);
+    transition-delay: 0.3s;
+  }
+  .container .box:hover .content h2 {
+    transform: translateY(0px);
+  } 
+  .container .box .content p {
+    color: #fff;
+    transition: 0.5s;
+    font-size: 14px;
+    transform: translateY(200px);
+    transition-delay: 0.4s;
+  }
+  .container .box:hover .content p {
+    transform: translateY(0px);
+  }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-item" data-text="Home"><i class="fas fa-home"></i></a>
+            <a href="#" class="nav-item" data-text="Culture"><i class="fas fa-globe"></i></a>
+            <a href="landingpage.html" class="nav-item" data-text="Events"><i class="fas fa-calendar-alt"></i></a>
+            <a href="#" class="nav-item" data-text="About"><i class="fas fa-info-circle"></i></a>
+        </div>
+    </nav>
+
+    <section class="background"></section>
+
+    <div class="container">
+        <div class="box">
+            <div class="imgBx">
+                <img src="img/ten.jpg">
+            </div>
+            <div class="content">
+                <div>
+                    <h2>Benz 2023</h2>
+                    <p>"Experience sheer elegance on wheels with our Mercedes-Benz S-Class. Where luxury meets cutting-edge technology, every drive is a statement of prestige and sophistication."</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img src="img/seven.jpg">
+            </div>
+            <div class="content">
+                <div>
+                    <h2>Benz 2013</h2>
+                    <p>"Unleash power and style with the Mercedes-Benz AMG GT. Crafted for thrill-seekers, it merges breathtaking performance with a design that leaves an unforgettable impression on the road."</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img src="img/five.jpg">
+            </div>
+            <div class="content">
+                <div>
+                    <h2>Benz 2020</h2>
+                    <p>"Step into the future of mobility with the Mercedes-Benz EQC. It's not just an electric car; it's a lifestyle. Embrace sustainability without compromising on the iconic Mercedes-Benz comfort and luxury."</p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="imgBx">
+                <img src="img/eight.jpg">
+            </div>
+            <div class="content">
+                <div>
+                    <h2>Benz 2015</h2>
+                    <p>"Discover the perfect blend of sportiness and practicality in our Mercedes-Benz GLC. Designed for those who demand versatility, it effortlessly combines a spacious interior with dynamic driving capabilities."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <!-- Additional section content goes here -->
+    </section>
+
+    <!-- Font Awesome Script -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
