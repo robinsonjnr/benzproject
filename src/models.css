@@ -1,8 +1,7 @@
 body{
     padding: 0;
     margin: 0;
-    background-color: black;
-    background-image: url(Hero.jpg);
+    background-image: url('Hero.jpg');
     
 }
 .products {
@@ -102,6 +101,3 @@ footer a {
   color: #fff;
 }
 
-footer a:hover {
-  color: #005293;
-}
