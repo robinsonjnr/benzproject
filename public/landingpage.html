@@ -51,10 +51,11 @@
         
 
         .logo img {
-            margin-right: 20px;
+            margin-right: 1200px;
             opacity: 0;
             height: auto;
             width: 50px;
+            animation: glitter 5s infinite;
         }
 
         .navbar a {
@@ -111,8 +112,9 @@
         /*styling for the 3rd div: the car display sections*/
     .container {
     position: relative;
-    width: 1600px;
+    width: 1583.1px;
     display: flex;
+    height: 50vh;
     justify-content: center;
     flex-wrap: wrap;
     transform-style: preserve-3d;
@@ -182,7 +184,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 27vh;
     object-fit: cover;
   }
   .container .box .content {
@@ -219,6 +221,86 @@ section {
   .container .box:hover .content p {
     transform: translateY(0px);
   }
+  .third-section {
+            display: flex;
+            height: 60vh;
+            
+        }
+
+        .text-div {
+            flex: 2;
+            padding: 20px;
+            background-color: #000;
+            color: #f2f2f2;
+        }
+
+        .image-div {
+            flex: 3;
+            background-size: cover;
+            background-position: center;
+            animation: changeBackground 15s infinite;
+        }
+
+        @keyframes changeBackground {
+            0% {
+                background-image: url('img/valuable\ benz.avif');
+            }
+            50% {
+                background-image: url('img/mq5-original-aspect.avif');
+            }
+            100% {
+                background-image: url('img/maybach\ S\ class.avif');
+            }
+        }
+
+        .header {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .paragraph {
+            line-height: 1.6;
+        }
+        .fourth-section {
+            display: flex;
+            height: 50vh;
+        }
+
+        .image-div2 {
+            flex: 3; /* Takes 60% of the container */
+            height: auto; /* Set a fixed height for the image div */
+            background-size: cover;
+            background-position: center;
+            animation: imageChange 15s infinite; /* Animation for changing images */
+        }
+
+        @keyframes imageChange {
+            0%   {
+                background-image: url('img/GLE.jpg');
+            }
+            50% {
+                background-image: url('img/seven.jpg');
+            }
+            100% {
+                background-image: url('img/three.jpg');
+            }
+        }
+
+        .text-div2 {
+            flex: 2; /* Takes 40% of the container */
+            padding: 0 20px;
+            background-color: #000;
+            color: #f2f2f2;
+        }
+
+        .text-div2 h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .text-div2 p {
+            line-height: 1.6;
+        }
     </style>
 </head>
 
@@ -239,6 +321,7 @@ section {
         <div class="raindrop" style="right: 20%; animation-delay: 1s;"></div>
         <div class="raindrop" style="right: 30%; animation-delay: 1.5s;"></div>
     </div>
+    
     <div class="container">
         <div class="box">
             <div class="imgBx">
@@ -286,7 +369,22 @@ section {
         </div>
         
     </div>
+    <div class="third-section">
+        <div class="text-div">
+            <h1 class="header">Masterpiece of Elegance: The Exquisite Mercedes-Benz Exterior</h1>
+            <p class="paragraph">The Mercedes-Benz exterior is a masterpiece of elegance and precision. Its sleek contours and iconic front grille exude timeless grace, commanding attention on every road. With piercing LED headlights and meticulously crafted alloy wheels, it creates an aura of mystique, turning every drive into a captivating experience.
 
+                Every detail, from the seams to the choice of colors, reflects precision engineering and artistic brilliance. It's not just a car; it's a statement of luxury and style. To drive a Mercedes-Benz is to embrace unparalleled elegance, making every journey a testament to refined taste and sophistication.</p>
+        </div>
+        <div class="image-div"></div>
+    </div>
+    <div class="fourth-section">
+        <div class="image-div2"></div>
+        <div class="text-div2">
+            <h2>Luxurious Sanctum: The Interior Marvel of Mercedes-Benz</h2>
+            <p>Step into a world of opulence with Mercedes-Benz. The interior is a masterpiece of comfort and technology. Sink into plush leather seats, enveloped in ambient lighting. The dashboard, adorned with cutting-edge tech, responds to your touch. Ventilated seats and panoramic views ensure every drive is pure indulgence. In a Mercedes, luxury is not a choice; it's a way of life.</p>
+        </div>
+    </div>
 </body>
 
 </html>

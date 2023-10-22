@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inconsolata', monospace;
+    }
+
+    .color-list {
+      display: flex;
+      flex-direction: row;
+      height: 50vh;
+    }
+
+    .color {
+      flex: 0 0 20%;
+      box-shadow: 0 0 30px #424242;
+      padding: 1em;
+      color: white;
+      transition: flex-basis 0.5s ease-in-out;
+    }
+
+    .color:hover {
+      flex-basis: 40%;
+    }
+
+    .color:hover .details {
+      opacity: 1;
+    }
+
+    .name {
+      font-size: 1.2em;
+    }
+
+    .details {
+      padding: 0;
+      list-style: none;
+      opacity: 0;
+      transition: opacity 500ms ease-in-out;
+    }
+
+    .details li {
+      line-height: 2em;
+    }
+
+    #clean {
+      background-color: #A7D2CB;
+    }
+
+    #butter {
+      background-color: #F2D388;
+    }
+
+    #salmon {
+      background-color: #C98474;
+    }
+
+    #eggplant {
+      background-color: #874C62;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+  <title>Color List</title>
+</head>
+
+<body>
+  <div class="color-list">
+    <section class="color" id="clean">
+      <h2 class="name">Clean</h2>
+      <ul class="details">
+        <li>#A7D2CB</li>
+        <li>RGB(167,210,203)</li>
+      </ul>
+    </section>
+    <section class="color" id="butter">
+      <h2 class="name">Butter</h2>
+      <ul class="details">
+        <li>#F2D388</li>
+        <li>RGB(242,211,136)</li>
+      </ul>
+    </section>
+    <section class="color" id="salmon">
+      <h2 class="name">Salmon</h2>
+      <ul class="details">
+        <li>#C98474</li>
+        <li>RGB(201,132,116)</li>
+      </ul>
+    </section>
+    <section class="color" id="eggplant">
+      <h2 class="name">Eggplant</h2>
+      <ul class="details">
+        <li>#874C62</li>
+        <li>RGB(135,76,98)</li>
+      </ul>
+    </section>
+    <section class="color" id="eggplant">
+      <h2 class="name">Eggplant</h2>
+      <ul class="details">
+        <li>#874C62</li>
+        <li>RGB(135,76,98)</li>
+      </ul>
+    </section>
+  </div>
+</body>
+
+</html>
