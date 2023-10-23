@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 body{
-	background-image: url(Hero.jpg);
+	background-image: url(redmaybach.avif);
 	font-family: 'Roboto', sans-serif;
 }
+
+html{
+	scroll-behavior: smooth;
+}
+
 .card{
 	width: 250px;
 	border-radius: 10px;
@@ -77,8 +82,8 @@ small.justify-content-center{
 
 
 .navbar{
-	background-color: #791818;
-	text-decoration: #FFCBD2;
+	background-color: #131111;
+	text-decoration: #d4d3d3;
 	padding: 0%;
 	border-radius: 10px;
 	margin-bottom: 20px;
