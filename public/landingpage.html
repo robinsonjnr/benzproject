@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-KwYwGQOxZP6iLUf2hHkWJ5j5kqbbpU4A02H9PRlXn1ZDcV1gE8uQI4+YP9cJr72c8m82oAa8EBVx2zxEVZzR6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 
     <title>BENZ</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
         * {
             margin: 0;
             padding: 0;
@@ -112,7 +115,7 @@
         /*styling for the 3rd div: the car display sections*/
     .container {
     position: relative;
-    width: 1583.1px;
+    width: 100%;
     display: flex;
     height: 50vh;
     justify-content: center;
@@ -224,6 +227,8 @@ section {
   .third-section {
             display: flex;
             height: 60vh;
+            position: relative;
+            z-index: 1;
             
         }
 
@@ -264,6 +269,8 @@ section {
         .fourth-section {
             display: flex;
             height: 50vh;
+            position: relative;
+            z-index: 1;
         }
 
         .image-div2 {
@@ -301,6 +308,136 @@ section {
         .text-div2 p {
             line-height: 1.6;
         }
+        /*styling for the background text of the background container*/
+        .button-wrapper {
+            position: absolute;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .btn-discover {
+            background-color: transparent;
+            color: #f2f2f2;
+            border: 2px solid transparent;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: design 5s infinite;
+            
+
+        }
+        @keyframes design {
+            0% {
+                border-color: #ffcc00;
+            }
+            50% {
+                border-color: #ff6699;
+            }
+            100% {
+                border-color: #ffcc00;
+            }
+        }
+        
+
+        .btn-discover:hover {
+            background-color: #f2f2f2;
+            color: #000;
+        }
+
+        .text-on-button {
+            font-size: 24px;
+            color: #f2f2f2;
+            margin-bottom: 60px;
+            font-family: 'Nosifer', sans-serif;
+            
+        }
+        
+        /*styling for the video section*/
+    .video-section{
+        position: relative;
+        height: 80vh;
+        overflow: hidden;
+    }
+
+    video{
+        position: absolute;
+        top: o;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    .content-wrapper{
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 20px;
+        color: #f2f2f2;
+        margin-top: 200px;
+        bottom: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+        
+    }
+    .content{
+        margin-bottom: 30px;
+    }
+    .content h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #f2f2f2;
+        margin-bottom: 10px;
+        font-family: 'Nosifer', sans-serif;
+    }
+/*styling of the icons for the interior and exterior div*/
+    .icon-container {
+    position: absolute;
+    bottom: 20px;
+    right: 100px;
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+    z-index: 2; /* Set a higher z-index value */
+}
+
+.icon-container i {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+    margin-left: 30px;
+    
+
+}
+
+.icon-container i:hover {
+    color: #ffcc00;
+}
+/* Add styles for the bottom-left-icons */
+.bottom-left-icons {
+    position: absolute;
+    bottom: 20px; 
+    left: 20px; 
+    display: flex;
+}
+
+/* Style individual icons */
+.bottom-left-icons i {
+    font-size: 24px;
+    color: white;
+    margin-right: 30px; 
+    cursor: pointer;
+}
+.bottom-left-icons i:hover {
+    color: #ffcc00;
+}
     </style>
 </head>
 
@@ -312,7 +449,12 @@ section {
         <a href="#">Culture</a>
     </div>
     <div class="background-container">
-        <div class="background"></div>
+        <div class="background">
+            <div class="button-wrapper">
+                <p class="text-on-button">Explore the world of Mercedez</p>
+                <a href="#" class="btn-discover">Discover More</a>
+            </div>
+        </div>
         <!-- Add raindrops to the background container -->
         <div class="raindrop" style="left: 10%; animation-delay: 0.5s;"></div>
         <div class="raindrop" style="left: 20%; animation-delay: 1s;"></div>
@@ -369,6 +511,19 @@ section {
         </div>
         
     </div>
+    <div class="video-section">
+        <video autoplay muted loop>
+            <source src="img/HKWA_EQ_REEL_XL (1).mp4" type="video/mp4">
+            your browser does not support the video tag.
+        </video>
+        <div class="content-wrapper">
+            <div class="content">
+                <h1>Experience the Art of luxury</h1>
+                <p>Courage, Culture, Class......</p>
+            </div>
+            <a href="listing.html" class="btn-discover">Discover More</a>
+        </div>
+    </div>
     <div class="third-section">
         <div class="text-div">
             <h1 class="header">Masterpiece of Elegance: The Exquisite Mercedes-Benz Exterior</h1>
@@ -376,10 +531,22 @@ section {
 
                 Every detail, from the seams to the choice of colors, reflects precision engineering and artistic brilliance. It's not just a car; it's a statement of luxury and style. To drive a Mercedes-Benz is to embrace unparalleled elegance, making every journey a testament to refined taste and sophistication.</p>
         </div>
-        <div class="image-div"></div>
+        <div class="image-div">
+            <div class="icon-container">
+                <i class="material-icons">share</i> <!-- Share icon -->
+                <i class="material-icons">cloud_download</i> <!-- Download icon -->
+                <i class="material-icons">save</i> <!-- Save icon -->
+            </div>
+        </div>
     </div>
     <div class="fourth-section">
-        <div class="image-div2"></div>
+        <div class="image-div2">
+            <div class="bottom-left-icons">
+                <i class="material-icons">share</i>
+                <i class="material-icons">cloud_download</i>
+                <i class="material-icons">save</i>
+            </div>
+        </div>
         <div class="text-div2">
             <h2>Luxurious Sanctum: The Interior Marvel of Mercedes-Benz</h2>
             <p>Step into a world of opulence with Mercedes-Benz. The interior is a masterpiece of comfort and technology. Sink into plush leather seats, enveloped in ambient lighting. The dashboard, adorned with cutting-edge tech, responds to your touch. Ventilated seats and panoramic views ensure every drive is pure indulgence. In a Mercedes, luxury is not a choice; it's a way of life.</p>
