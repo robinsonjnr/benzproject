@@ -13,6 +13,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap');
+        html{
+            scroll-behavior: smooth;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -69,8 +72,32 @@
             margin-right: 20px;
             font-family: 'Pixelify Sans', sans-serif;
             margin-left: 20px;
+            position: relative;
             
         }
+        /* Apply the CSS styles to individual text inside navbar links */
+    
+    
+
+    .navbar a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px; /* Set the height of the underline */
+        background: hsl(45 100% 70%); /* Set the color of the underline */
+        transform: scaleX(0); /* Initially set the width of the underline to 0 */
+        transform-origin: right;
+        transition: transform 0.5s ease-in-out;
+        z-index: -1;
+    }
+
+    .navbar a:hover::before {
+        transform: scaleX(1); /* Expand the underline horizontally on hover */
+        transform-origin: left;
+    }
+
         /*adding styles for the glowing img logo*/
         @keyframes glitter {
             0% {
@@ -238,7 +265,7 @@ section {
             padding: 20px;
             background-color: #000;
             color: #f2f2f2;
-            text-align: center;
+            
             font-family: Arial, Helvetica, sans-serif;
             
         }
@@ -273,6 +300,7 @@ section {
             line-height: 2;
             font-size: 16px;
             color: #777;
+            margin-bottom: 30px;
         }
         .fourth-section {
             display: flex;
@@ -306,16 +334,19 @@ section {
             padding: 0 20px;
             background-color: #000;
             color: #777;
+            
         }
 
         .text-div2 h2 {
             font-size: 20px;
             margin-bottom: 10px;
             font-family: 'Nosifer', sans-serif;
+            
         }
 
         .text-div2 p {
             line-height: 1.6;
+            margin-bottom: 40px;
         }
         /*styling for the background text of the background container*/
         .button-wrapper {
@@ -455,8 +486,9 @@ ul {
   display:flex;
   margin:0;
   padding:0;
-  margin-top: 100px;
+  margin-top: 40px;
   justify-content: center;
+  
 
 }
 
@@ -574,16 +606,18 @@ ul li:hover:nth-child(4) a:after{
 }
 .footer h1 {
     text-align: center;
-    padding-bottom: 40px;
+    top: 0;
     transform: translateY(50px);
-    margin-top: 0;
+    margin-top: -55px;
     font-family: 'Nosifer', sans-serif;
     font-size: 30px;
+    
     
 }
 .footer {
     
     position: relative;
+    height: 30vh;
 }
 .footer-content {
             display: flex;
@@ -594,6 +628,7 @@ ul li:hover:nth-child(4) a:after{
             width: 100%;
             background-color: #000;
             height: 100vh;
+            margin-top: -190px;
         }
 
         .section {
@@ -630,46 +665,50 @@ ul li:hover:nth-child(4) a:after{
     margin-bottom: 20px;
     text-align: center;
 }
+
+
+
+
 .quick-links {
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-.column {
-    flex: 0 0 calc(33.333% - 20px); /* Each column occupies 33.333% of the available space with margin */
-    margin: 0 10px; /* Adjust margin as needed */
-    text-align: left;
-    margin-bottom: 20px; /* Margin between columns */
-    box-sizing: border-box;
-}
-
-.column h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333; /* Color for column headings */
-}
-
-.column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.column ul li {
-    margin-bottom: 8px;
-    color: #666; /* Color for list items */
-}
-
-.centered-image {
+.grid-item {
+    padding: 20px;
+    flex: 0 0 calc(33.3333% - 20px); /* Three items per row */
     text-align: center;
-    margin-top: 20px; /* Adjust margin as needed */
+    position: relative;
 }
 
-.centered-image img {
-    max-width: 100%; /* Ensure the image doesn't exceed its container */
+.grid-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    position: relative; /* Ensure the ::before pseudo-element is positioned relative to the anchor */
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
+.grid-item a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px; /* Set the height of the underline */
+    background: hsl(45 100% 70%); /* Set the color of the underline */
+    transform: scaleX(0); /* Initially set the width of the underline to 0 */
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+    z-index: 1000;
+}
 
+.grid-item a:hover::before {
+    transform: scaleX(1); /* Expand the underline horizontally on hover */
+    transform-origin: left;
+}
 
     </style>
 </head>
@@ -763,6 +802,7 @@ ul li:hover:nth-child(4) a:after{
             <p class="paragraph">The Mercedes-Benz exterior is a masterpiece of elegance and precision. Its sleek contours and iconic front grille exude timeless grace, commanding attention on every road. With piercing LED headlights and meticulously crafted alloy wheels, it creates an aura of mystique, turning every drive into a captivating experience.
 
                 Every detail, from the seams to the choice of colors, reflects precision engineering and artistic brilliance. It's not just a car; it's a statement of luxury and style. To drive a Mercedes-Benz is to embrace unparalleled elegance, making every journey a testament to refined taste and sophistication.</p>
+                <a href="listing.html" class="btn-discover">Discover More</a>
         </div>
         <div class="image-div">
             <div class="icon-container">
@@ -783,83 +823,72 @@ ul li:hover:nth-child(4) a:after{
         <div class="text-div2">
             <h2>Luxurious Sanctum: The Interior Marvel of Mercedes-Benz</h2>
             <p>Step into a world of opulence with Mercedes-Benz. The interior is a masterpiece of comfort and technology. Sink into plush leather seats, enveloped in ambient lighting. The dashboard, adorned with cutting-edge tech, responds to your touch. Ventilated seats and panoramic views ensure every drive is pure indulgence. In a Mercedes, luxury is not a choice; it's a way of life.</p>
+            <a href="listing.html" class="btn-discover">Discover More</a>
         </div>
     </div>
     <div class="footer">
-        <h1>FOLLOW MERCEDEZ BENZ</h1>
+        
         <ul>
-    <li>
-        <a href="#">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-        <span> - Facebook</span>
-        </a>
-    </li>
-    <li>
-        <a href="#">
-        <i class="fa fa-twitter" aria-hidden="true"></i>
-        <span> - Twitter</span>
-        </a>
-    </li>
-    <li>
-        <a href="#">
-        <i class="fa fa-google-plus" aria-hidden="true"></i>
-        <span> - Google</span>
-        </a>
-    </li>
-    <li>
-        <a href="#">
-        <i class="fa fa-instagram" aria-hidden="true"></i>
-        <span> - Instagram</span>
-        </a>
-    </li>
-    <div class="footer-content">
-        <div class="section">
-            <h2>Subscribe to Newsletter</h2>
-            <p>Stay updated with the latest news, offers, and events. Join our newsletter community today!</p>
-            <div class="subscribe">
-                <input type="email" placeholder="Enter your email">
-                <button>Subscribe Now</button>
-            </div>
-        </div>
-        <!-- Add raindrops to the background container 
-        <div class="quick-links">
-        <h3>Quick Links</h3>
-        <div class="links">
-            <div class="column">
-                <h4>Company</h4>
-                <ul>
-                    <li>Overview</li>
-                    <li>Careers</li>
-                    <li>Investors</li>
-                    <li>Media Site</li>
-                </ul>
-            </div>
-            <div class="column">
-                <h4>Knowledge</h4>
-                <ul>
-                    <li>Consumption & Emissions</li>
-                    <li>Real Driving Emissions</li>
-                    <li>UN 38.3 Test</li>
-                </ul>
-            </div>
-            <div class="column">
-                <h4>Business Services</h4>
-                <ul>
-                    <li>Fleet Sales</li>
-                    <li>International Diplomatic Sales</li>
-                    <li>Mercedes-Benz GUARD</li>
-                    <li>Training for Authorized Dealers</li>
-                    <li>Mercedes-Benz Energy Storage</li>
-                </ul>
+        <li>
+            <a href="#">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span> - Facebook</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span> - Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+            <i class="fa fa-google-plus" aria-hidden="true"></i>
+            <span> - Google</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <span> - Instagram</span>
+            </a>
+        </li>
+        </ul>
+        <div class="footer-content">
+            <div class="section">
+                <h2>Subscribe to Newsletter</h2>
+                <p>Stay updated with the latest news, offers, and events. Join our newsletter community today!</p>
+                <div class="subscribe">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe Now</button>
+                </div>
+                <div class="last-section">
+                    <h2>Quick Links</h2>
+                
+                    <div class="quick-links">
+                        <div class="grid-item"><a href="#">Home</a></div>
+                        <div class="grid-item"><a href="#">About Us</a></div>
+                        <div class="grid-item"><a href="#">Services</a></div>
+                        <div class="grid-item"><a href="#">Contact</a></div>
+                        <div class="grid-item"><a href="#">Portfolio</a></div>
+                        <div class="grid-item"><a href="#">Testimonials</a></div>
+                        <div class="grid-item"><a href="#">Blog</a></div>
+                        <div class="grid-item"><a href="#">FAQ</a></div>
+                        <div class="grid-item"><a href="#">Gallery</a></div>
+                        <div class="grid-item"><a href="#">Pricing</a></div>
+                        <div class="grid-item"><a href="#">Support</a></div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
-    <div class="centered-image">
-        <img src="favicon.ico" alt="Centered Image">
-    </div>
-    </div>
-    -->
     
+    
+            
+    
+
+ 
 
 </body>
 
