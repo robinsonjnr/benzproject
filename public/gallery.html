@@ -156,6 +156,7 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
         }
 
         .modal-content {
@@ -168,6 +169,7 @@
         .modal-content img {
             width: 100%;
             height: auto;
+            
         }
 
         .close {
@@ -429,36 +431,7 @@ ul li:hover:nth-child(4) a:after{
             z-index: 2;
         }
 
-        .btn-discover {
-            background-color: transparent;
-            color: #f2f2f2;
-            border: 2px solid transparent;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            animation: design 5s infinite;
-            
-
-        }
-        @keyframes design {
-            0% {
-                border-color: #ffcc00;
-            }
-            50% {
-                border-color: #ff6699;
-            }
-            100% {
-                border-color: #ffcc00;
-            }
-        }
         
-
-        .btn-discover:hover {
-            background-color: #f2f2f2;
-            color: #000;
-        }
 
         .text-on-button {
             font-size: 24px;
@@ -480,8 +453,8 @@ ul li:hover:nth-child(4) a:after{
     <div class="background-container">
         <div class="background">
             <div class="button-wrapper">
-                <p class="text-on-button">Explore the world of Mercedez</p>
-                <a href="Event.html" class="btn-discover">Discover More</a>
+                <p class="text-on-button">Gallery: Where Imagination Takes Flight!</p>
+                
             </div>
         </div>
         <!-- Add raindrops to the background container -->
