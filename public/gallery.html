@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap');  
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+.navbar {
+    background-color: black;
+            color: #fff;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            border: 2px solid transparent;
+            animation: changeColor 5s infinite;
+            position: fixed; /* Fixed position */
+            width: 100%; /* Take the full width of the viewport */
+            top: 0; /* Stick to the top */
+            z-index: 1000; /* Ensure it appears above other elements */
+}
+.navbar:hover {
+            border-color: #ffcc00;
+        }
+
+/* Style for navbar links */
+.navbar a {
+            text-decoration: none;
+            color: #f2f2f2;
+            font-size: 18px;
+            margin-right: 20px;
+            font-family: 'Pixelify Sans', sans-serif;
+            margin-left: 20px;
+            position: relative;
+}
+.navbar a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px; /* Set the height of the underline */
+        background: hsl(45 100% 70%); /* Set the color of the underline */
+        transform: scaleX(0); /* Initially set the width of the underline to 0 */
+        transform-origin: right;
+        transition: transform 0.5s ease-in-out;
+        z-index: -1;
+    }
+
+    .navbar a:hover::before {
+        transform: scaleX(1); /* Expand the underline horizontally on hover */
+        transform-origin: left;
+    }
+
+/* Applying animation to the border of the navbar */
+@keyframes changeColor {
+    0% {
+        border-color: #ffcc00;
+    }
+    50% {
+        border-color: #ff6699;
+    }
+    100% {
+        border-color: #ffcc00;
+    }
+}
+
+/* Applying animation to the logo */
+.navbar .logo img {
+            margin-right: 1200px;
+            opacity: 0;
+            height: auto;
+            width: 50px;
+            animation: glitter 5s infinite;
+}
+
+/* Glitter animation for the logo */
+@keyframes glitter {
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+.background-container {
+            height: 70vh; /* Set height to 70% of the viewport height */
+            width: 100%;
+            overflow: hidden; /* Ensure the image does not overflow the container */
+            position: relative;
+            background-size: 100px 80px;
+        }
+
+        .background {
+            height: 100%; /* Make the background fill the entire container */
+            width: 100%;
+            background: url("img/pictures/BG\ GALLERY.avif") no-repeat center center/cover;
+        }
+        /*styling the raindrop effect*/
+        .raindrop {
+            position: absolute;
+            bottom: 100%;
+            width: 5px;
+            height: 10px;
+            background-color: #fff;
+            opacity: 0.7;
+            animation: fall 1s linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        
+            .image-container {
+            margin: 10px;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #f2f2f2;
+        }
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #f2f2f2;
+        }
+        .image-container img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: 10% auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #ccc;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        
+        .footer h1 {
+    text-align: center;
+    top: 0;
+    transform: translateY(50px);
+    margin-top: -55px;
+    font-family: 'Nosifer', sans-serif;
+    font-size: 30px;
+    
+    
+}
+.footer {
+    
+    position: relative;
+    height: 30vh;
+    width: 100% !important;
+}
+.footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            position:absolute;
+            top: 200%;
+            width: 100%;
+            background-color: #000;
+            height: 100vh;
+            margin-top: -190px;
+        }
+
+        .section {
+            flex: 1;
+            margin: 0 20px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .subscribe {
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .subscribe input {
+            padding: 10px;
+            width: 70%;
+        }
+
+        .subscribe button {
+            background-color: #ffcc00;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .footer-content .section p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+
+
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.grid-item {
+    padding: 20px;
+    flex: 0 0 calc(33.3333% - 20px); /* Three items per row */
+    text-align: center;
+    position: relative;
+}
+
+.grid-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    position: relative; /* Ensure the ::before pseudo-element is positioned relative to the anchor */
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.grid-item a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px; /* Set the height of the underline */
+    background: hsl(45 100% 70%); /* Set the color of the underline */
+    transform: scaleX(0); /* Initially set the width of the underline to 0 */
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.grid-item a:hover::before {
+    transform: scaleX(1); /* Expand the underline horizontally on hover */
+    transform-origin: left;
+}
+ul {
+  position:relative;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  display:flex;
+  margin:0;
+  padding:0;
+  margin-top: 40px;
+  justify-content: center;
+  
+
+}
+
+ul li {
+  list-style:none;
+  margin:0 5px;
+  margin-right: 90px;
+}
+
+ul li a .fa {
+  font-size: 40px;
+  color: #262626;
+  line-height:80px;
+  transition: .5s;
+  padding-right: 44px;
+}
+
+ul li a span {
+  padding:0;
+  margin:0;
+  position:absolute;
+  top: 30px;
+  color: #262626;
+  letter-spacing: 4px;
+  transition: .5s;
+}
+
+ul li a {
+  text-decoration: none;
+  display:absolute;
+  display:block;
+  width:210px;
+  height:80px;
+  background: #fff;
+  text-align:left;
+  padding-left: 20px;
+  transform: rotate(-30deg) skew(25deg) translate(0,0);
+  transition:.5s;
+  box-shadow: -20px 20px 10px rgba(0,0,0,.5);
+}
+ul li a:before {
+  content: '';
+  position: absolute;
+  top:10px;
+  left:-20px;
+  height:100%;
+  width:20px;
+  background: #b1b1b1;
+  transform: .5s;
+  transform: rotate(0deg) skewY(-45deg);
+}
+ul li a:after {
+  content: '';
+  position: absolute;
+  bottom:-20px;
+  left:-10px;
+  height:20px;
+  width:100%;
+  background: #b1b1b1;
+  transform: .5s;
+  transform: rotate(0deg) skewX(-45deg);
+}
+
+ul li a:hover {
+  transform: rotate(-30deg) skew(25deg) translate(20px,-15px);
+  box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+}
+
+ul li:hover .fa {
+  color:#fff;
+}
+
+ul li:hover span {
+  color:#fff;
+}
+
+ul li:hover:nth-child(1) a{
+  background: #3b5998;
+}
+ul li:hover:nth-child(1) a:before{
+  background: #365492;
+}
+ul li:hover:nth-child(1) a:after{
+  background: #4a69ad;
+}
+
+ul li:hover:nth-child(2) a{
+  background: #00aced;
+}
+ul li:hover:nth-child(2) a:before{
+  background: #097aa5;
+}
+ul li:hover:nth-child(2) a:after{
+  background: #53b9e0;
+}
+
+ul li:hover:nth-child(3) a{
+  background: #dd4b39;
+}
+ul li:hover:nth-child(3) a:before{
+  background: #b33a2b;
+}
+ul li:hover:nth-child(3) a:after{
+  background: #e66a5a;
+}
+
+ul li:hover:nth-child(4) a{
+  background: #e4405f;
+}
+ul li:hover:nth-child(4) a:before{
+  background: #d81c3f;
+}
+ul li:hover:nth-child(4) a:after{
+  background: #e46880;
+}
+.button-wrapper {
+            position: absolute;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .btn-discover {
+            background-color: transparent;
+            color: #f2f2f2;
+            border: 2px solid transparent;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: design 5s infinite;
+            
+
+        }
+        @keyframes design {
+            0% {
+                border-color: #ffcc00;
+            }
+            50% {
+                border-color: #ff6699;
+            }
+            100% {
+                border-color: #ffcc00;
+            }
+        }
+        
+
+        .btn-discover:hover {
+            background-color: #f2f2f2;
+            color: #000;
+        }
+
+        .text-on-button {
+            font-size: 24px;
+            color: #f2f2f2;
+            margin-bottom: 60px;
+            font-family: 'Nosifer', sans-serif;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><img src="favicon.ico"></div>
+        <a href="landingpage.html">Home</a>
+        <a href="Event.html">Events</a>
+        <a href="gallery.html">Culture</a>
+    </div>
+    <div class="background-container">
+        <div class="background">
+            <div class="button-wrapper">
+                <p class="text-on-button">Explore the world of Mercedez</p>
+                <a href="Event.html" class="btn-discover">Discover More</a>
+            </div>
+        </div>
+        <!-- Add raindrops to the background container -->
+        <div class="raindrop" style="left: 10%; animation-delay: 0.5s;"></div>
+        <div class="raindrop" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="raindrop" style="left: 30%; animation-delay: 1.5s;"></div>
+        <div class="raindrop" style="right: 10%; animation-delay: 0.5s;"></div>
+        <div class="raindrop" style="right: 20%; animation-delay: 1s;"></div>
+        <div class="raindrop" style="right: 30%; animation-delay: 1.5s;"></div>
+    </div>
+<body class="specific-body">
+    <div class="image-container">
+        <img src="img/pictures/GALLERY1.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY2.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY3.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY4.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY5.webp" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY6.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY7.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY8.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY9.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY10.webp" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY11.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY12.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY13.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY14.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY15.webp" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY16.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY17.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY18.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY19.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY20.webp" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY21.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY22.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY23.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY24.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY1.webp" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY16.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY14.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY12.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY10.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY1.webp" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY16.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY14.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY12.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY10.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY1.webp" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY16.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY14.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY12.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY10.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY1.webp" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY16.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY14.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY12.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY10.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY1.webp" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY16.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY14.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY12.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY10.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY1.webp" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY16.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY14.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY12.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY10.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY1.webp" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY16.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY14.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY12.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY10.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY1.webp" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY16.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY14.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY12.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY10.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY1.webp" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY16.webp" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY14.webp" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY12.webp" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY10.webp" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img src="img/pictures/GALLERY1.webp" alt="Image 5">
+    </div>
+    <!-- Add more image containers as needed -->
+
+    <!-- Modal for enlarged image -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Enlarged Image">
+        </div>
+    </div>
+</body>
+    <div class="footer">
+        
+        <ul>
+        <li>
+            <a href="#">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span> - Facebook</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span> - Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+            <i class="fa fa-google-plus" aria-hidden="true"></i>
+            <span> - Google</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <span> - Instagram</span>
+            </a>
+        </li>
+        </ul>
+        <div class="footer-content">
+            <div class="section">
+                <h2>Subscribe to Newsletter</h2>
+                <p>Stay updated with the latest news, offers, and events. Join our newsletter community today!</p>
+                <div class="subscribe">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe Now</button>
+                </div>
+                <div class="last-section">
+                    <h2>Quick Links</h2>
+                
+                    <div class="quick-links">
+                        <div class="grid-item"><a href="#">Home</a></div>
+                        <div class="grid-item"><a href="#">About Us</a></div>
+                        <div class="grid-item"><a href="#">Services</a></div>
+                        <div class="grid-item"><a href="#">Contact</a></div>
+                        <div class="grid-item"><a href="#">Portfolio</a></div>
+                        <div class="grid-item"><a href="#">Testimonials</a></div>
+                        <div class="grid-item"><a href="#">Blog</a></div>
+                        <div class="grid-item"><a href="#">FAQ</a></div>
+                        <div class="grid-item"><a href="#">Gallery</a></div>
+                        <div class="grid-item"><a href="#">Pricing</a></div>
+                        <div class="grid-item"><a href="#">Support</a></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal
+        var images = document.querySelectorAll(".image-container img");
+        var modalImg = document.getElementById("modalImage");
+
+        images.forEach(function(img) {
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        // Get the close button
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        // Close the modal when the close button is clicked
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal when clicking outside the modal content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    
+</body>
+</html>
