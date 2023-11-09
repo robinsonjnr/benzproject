@@ -126,7 +126,7 @@ small.justify-content-center{
         border-color: #ffcc00;
     }
     50% {
-        border-color: #ff6699;
+        border-color: rgb(156, 0, 0), 102, 102);
     }
     100% {
         border-color: #ffcc00;
@@ -336,7 +336,7 @@ ul {
 		  }
   
 		  .subscribe button {
-			  background-color: #ffcc00;
+			  background-color: #e70303;
 			  color: #333;
 			  border: none;
 			  padding: 10px 20px;
